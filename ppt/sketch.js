@@ -21,9 +21,9 @@ function setup() {
   var button = createButton('Begin');
   button.mousePressed(begin);
   previousSlide = createButton('Previous');
+  nextSlide = createButton('Next');
   previousSlide.mousePressed(goBack);
   previousSlide.hide();
-  nextSlide = createButton('Next');
   nextSlide.mousePressed(advance);
   nextSlide.hide();
 
