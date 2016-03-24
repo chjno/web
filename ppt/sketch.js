@@ -16,17 +16,6 @@ var previousSlide
 var nextSlide
 
 function setup() {
-  inputName = createInput('Your name');
-  inputWord = createInput('Your favorite thing');
-  var button = createButton('Begin');
-  button.mousePressed(begin);
-  previousSlide = createButton('Previous');
-  nextSlide = createButton('Next');
-  previousSlide.mousePressed(goBack);
-  previousSlide.hide();
-  nextSlide.mousePressed(advance);
-  nextSlide.hide();
-
   createCanvas(1021, 655);
 
   defDiv = createDiv('');
@@ -41,15 +30,21 @@ function preload() {
   loadJSON('creds.json', gotKeys);
 }
 
+$(function () {
+  $('#begin').click(begin);
+  $('#prev').click(goBack);
+  $('#next').click(advance);
+});
+
 function begin() {
   currentSlide = 0;
   defPrint = true;
   defDiv.hide();
   image1.hide();
-  previousSlide.show();
-  nextSlide.show();
-  yourName = inputName.value();
-  yourWord = inputWord.value();
+  $('#prev').show();
+  $('#next').show();
+  yourName = $('#name').val();
+  yourWord = $('#thing').val();
   var urlDef = 'http://api.wordnik.com:80/v4/word.json/' + yourWord + 
     '/definitions?limit=10&includeRelated=false&useCanonical=true' +
     '&includeTags=false&api_key=' + wordnikKey;
