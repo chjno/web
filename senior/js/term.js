@@ -237,13 +237,13 @@ function startTerm(){
             }, 6000);
             setTimeout(function(){
               term.echo('[[;white;black]                                                             ][[;white;blue].]');
-              term.echo(' ');
-              term.echo(' ');
-              term.echo(' ');
-              term.echo(' ');
-              term.echo(' ');
             }, 7000);
             setTimeout(function(){
+              term.echo(' ');
+              term.echo(' ');
+              term.echo(' ');
+              term.echo(' ');
+              term.echo(' ');
               term.echo('[[;yellow;black]Music adapted from ][[!;;;;https://open.spotify.com/track/7GZkTGmxvBOMXjBsMxgKvz]"...And The Forest Began To Sing"][[;yellow;black] by Royksopp]');
             }, 10000);
             state = 8;
