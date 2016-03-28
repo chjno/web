@@ -159,7 +159,7 @@ function startTerm(){
             setTimeout(function(){
               term.echo('[[;white;blue]The stars look strange tonight.]');
               term.echo(' ');
-            }, 5000);
+            }, 8000);
             // setTimeout(function(){
             //   laserShot();
             // }, 1500);
@@ -168,7 +168,7 @@ function startTerm(){
             }, 1000);
 
             if (!testing){
-              pauseTerm(7000, term);
+              pauseTerm(9000, term);
             };
           }
 
