@@ -14,8 +14,10 @@ function draw(img, term) {
 
 function pauseTerm(delay, term){
   term.pause();
+  term.freeze(true);
   setTimeout(function(){
     term.resume();
+    term.freeze(false);
   }, delay);
 };
 
