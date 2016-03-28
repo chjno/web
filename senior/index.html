@@ -27,7 +27,9 @@
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       alert('Device not supported.');
       $("body").css("background-color", "white");
-      $("div#term").text("Error");
+      $("div#term").css("fontSize", "100");
+      $("div#term").css("text-align", "center");
+      $("div#term").text("Error!");
     } else {
 
       Tone.Buffer.on('load', function(){
