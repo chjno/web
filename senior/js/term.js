@@ -124,7 +124,7 @@ function startTerm(){
             }, 8000);
 
             if (!testing){
-              pauseTerm(9000, term);
+              pauseTerm(10000, term);
             }
           };
 
@@ -168,7 +168,7 @@ function startTerm(){
             }, 1000);
 
             if (!testing){
-              pauseTerm(9000, term);
+              pauseTerm(10000, term);
             };
           }
 
