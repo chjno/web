@@ -17,7 +17,7 @@ var snare = new Tone.Player({
 var hihat = new Tone.Player({
   "url": hihatURL,
   "retrigger": true,
-  "volume": -85
+  "volume": -95
 }).toMaster();
 
 var bassPattern;
@@ -72,7 +72,7 @@ function beatFadeOut(time){
   time = time || 0;
   kick.volume.rampTo(-64, time);
   snare.volume.rampTo(-65, time);
-  hihat.volume.rampTo(-85, time);
+  hihat.volume.rampTo(-95, time);
 }
 
 

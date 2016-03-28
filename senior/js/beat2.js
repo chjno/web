@@ -23,10 +23,17 @@ var Beat = function(){
   }).toMaster();
 }
 
+//callback from loop
+Beat.prototype._tick = function(when){
+
+}
+
 Beat.prototype.start = function(when){
   when = when || this.kick.now();
   
   var bassPattern = 0;
+  var loop = new Tone.Loop(this._tick.bind(this)), 3);
+
   var loop = new Tone.Loop(function(time){
     debugger;
     // this.kick.start(time);
@@ -64,7 +71,7 @@ Beat.prototype.start = function(when){
       this.hihat.start(time + i * 0.5);  
     }
     
-  }, 3).start(when);
+  }.bind(this), 3).start(when);
 }
 
 Beat.prototype.fadeIn = function(time){

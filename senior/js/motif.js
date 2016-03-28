@@ -90,3 +90,10 @@ Motif.prototype.start = function(when){
   this.genLengths();
   return 12 + when;
 };
+
+
+
+// var randomLoop = new Tone.Pattern(function(time, note){
+//   var noteLength = this.noteLengths[Math.floor(Math.random() * this.noteLengths.length)];
+//   bass.triggerAttackRelease(note, noteLength, time);
+// }, this.notes, "random");
