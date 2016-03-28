@@ -126,7 +126,7 @@ var puff = new Tone.Player({
 }).toMaster();
 
 
-var rainURL = './sounds/rain.mp3';
+var rainURL = './sounds/rain.wav';
 
 var rain = new Tone.Player({
   "url": rainURL,
