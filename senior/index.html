@@ -24,43 +24,49 @@
 
   <script type="text/javascript">
 
-    Tone.Buffer.on('load', function(){
-      Tone.Transport.start();
-      startTerm();
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      alert('Device not compatible');
+    } else {
 
-      // laser.start();
-      // var delay = 0.1
-      // Tone.Transport.scheduleRepeat(function(time){
-      //   laser.start(time);
-      // }, delay, laser.now(), 10);
+      Tone.Buffer.on('load', function(){
+        Tone.Transport.start();
+        startTerm();
 
-
-    });
-
-    var motif = new Motif();
-
-    Tone.Transport.scheduleRepeat(function(time){
-      motif.start(time);
-      motif.genLengths;
-    }, 12, 0);
+        // laser.start();
+        // var delay = 0.1
+        // Tone.Transport.scheduleRepeat(function(time){
+        //   laser.start(time);
+        // }, delay, laser.now(), 10);
 
 
+      });
+
+      var motif = new Motif();
+
+      Tone.Transport.scheduleRepeat(function(time){
+        motif.start(time);
+        motif.genLengths;
+      }, 12, 0);
 
 
 
 
-    // for (var i = 0; i < 3; i++){
-    //   var endTime = motif.start();
-    //   motif.start(endTime);  
-    // }
-    
-    // motif.setProbabilities(0.1,0.4,0.5);
 
 
-    // for (var i = 0; i < 3; i++){
-    //   var endTime = motif.start();
-    //   motif.start(endTime);
-    // }
+      // for (var i = 0; i < 3; i++){
+      //   var endTime = motif.start();
+      //   motif.start(endTime);  
+      // }
+      
+      // motif.setProbabilities(0.1,0.4,0.5);
+
+
+      // for (var i = 0; i < 3; i++){
+      //   var endTime = motif.start();
+      //   motif.start(endTime);
+      // }
+
+    }
 
   </script>
 
