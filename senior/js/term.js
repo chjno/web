@@ -12,6 +12,18 @@ function draw(img, term) {
   }
 }
 
+function drawDarkness(term){
+  var index = 0;
+  for (var i = 0; i < darkness.length; i++) {
+    var delay = 0 + i * 45;
+    setTimeout(function() {
+      term.echo('[[;;' + darkness[index] + ']                                                                                                    ]');
+      index++;
+    }, delay);
+  }
+}
+
+
 function pauseTerm(delay, term){
   term.pause();
   term.freeze(true);
@@ -105,10 +117,11 @@ function startTerm(){
             setTimeout(function(){
                 bassStart = true;
               }, 1000);
+            drawDarkness(term);
             setTimeout(function(){
               term.echo('[[;white;blue]Where are you going?]');
               term.echo(' ');
-            }, 6000);
+            }, 8000);
 
             if (!testing){
               pauseTerm(9000, term);
@@ -160,7 +173,7 @@ function startTerm(){
           }
 
           break;
-        case 'close':
+        case 'stop':
           if (state < 7){
             state = 7
 
@@ -214,7 +227,7 @@ function startTerm(){
             term.echo(' ');
           } else if (state == 6){
             term.echo(' ');
-            term.echo('[[;green;black]close] -- close your eyes and take a deep breath');
+            term.echo('[[;green;black]stop] -- close your eyes and take a deep breath');
             term.echo(' ');
           } else if (state == 7){
 
