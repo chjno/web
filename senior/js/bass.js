@@ -26,7 +26,8 @@ var bassLoop = new Tone.Loop(function(time) {
   }
 
   if (motifStart && bassIndex % 4 == 0){
-    motif.synth.volume.value = -20;
+    motif.synth.volume.value = -25;
+    motifStart = false;
   }
 
 

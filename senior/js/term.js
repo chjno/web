@@ -164,7 +164,7 @@ function startTerm(){
             //   laserShot();
             // }, 1500);
             setTimeout(function(){
-              rain.volume.rampTo(-5, 15);
+              rain.volume.rampTo(-15, 15);
             }, 1000);
 
             if (!testing){
