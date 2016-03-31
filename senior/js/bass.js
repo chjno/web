@@ -21,12 +21,12 @@ var motifStart = false;
 var bassLoop = new Tone.Loop(function(time) {
   if (bassStart && bassIndex % 2 == 0){
     bassIndex = 0;
-    bass.volume.value = -5;
+    bass.volume.value = -12;
     bassStart = false;
   }
 
   if (motifStart && bassIndex % 4 == 0){
-    motif.synth.volume.value = -25;
+    motif.synth.volume.value = -20;
     motifStart = false;
   }
 
