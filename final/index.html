@@ -32,10 +32,10 @@
       alert('Device not supported.');
       $("body").css("background-color", "white");
       $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
-    } else if (browser == 'Firefox') {
-      alert("Browser not currently supported.\nPlease use Google Chrome.");
-      $("body").css("background-color", "white");
-      $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
+    // } else if (browser == 'Firefox') {
+    //   alert("Browser not currently supported.\nPlease use Google Chrome.");
+    //   $("body").css("background-color", "white");
+    //   $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
     } else {
       Tone.Buffer.on('load', function() {
         Tone.Transport.start();
