@@ -623,8 +623,10 @@ function twinkle(term) {
       //   }
       // };
     } else {
-      term.resume();
-      term.freeze(false);
+      setTimeout(function(){
+        term.resume();
+        term.freeze(false);
+      }, 1500);
       nextScene(term);
       // term.clear();
       // term.echo('stopped');

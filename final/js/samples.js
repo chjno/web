@@ -1,4 +1,14 @@
-var vinylURL = './sounds/static.ogg';
+// var vinylWav = './sounds/static.wav';
+// var vinylOgg = './sounds/static.ogg';
+// var vinylURL;
+
+// var puffWav = './sounds/puff.wav';
+// var puffOgg = './sounds/puff.ogg';
+// var puffURL;
+
+// var rainWav = './sounds/rain.wav';
+// var rainOgg = './sounds/rain.ogg';
+// var rainURL;
 
 var vinyl = new Tone.Player({
   "url": vinylURL,
@@ -38,15 +48,10 @@ var vinyl = new Tone.Player({
 //   }
 // }
 
-var puffURL = './sounds/puff.ogg';
-
 var puff = new Tone.Player({
   "url": puffURL,
   "volume": -50
 }).toMaster();
-
-
-var rainURL = './sounds/rain.ogg';
 
 var rain = new Tone.Player({
   "url": rainURL,

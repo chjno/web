@@ -5,42 +5,56 @@
   <script type="text/javascript" src="libraries/tone.min.js"></script>
   <script type="text/javascript" src="libraries/jquery-2.2.2.min.js"></script>
   <script type="text/javascript" src="libraries/jquery.terminal-0.9.3.min.js"></script>
-  <script type="text/javascript" src="js/bass.js"></script>
-  <script type="text/javascript" src="js/beat2.js"></script>
-  <script type="text/javascript" src="js/samples.js"></script>
-  <script type="text/javascript" src="js/motif.js"></script>
-  <script type="text/javascript" src="js/ascii.js"></script>
-  <script type="text/javascript" src="js/transcript.js"></script>
-  <script type="text/javascript" src="js/term.js"></script>
-  <link href="css/jquery.terminal-0.9.3.css" rel="stylesheet" />
-  <style>
-  body {
-    background-color: black;
-  }
-  
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  </style>
-</head>
-
-<body>
-  <div id="term"></div>
   <script type="text/javascript">
+  var vinylWav = './sounds/static.wav';
+  var vinylOgg = './sounds/static.ogg';
+  var vinylURL;
+
+  var puffWav = './sounds/puff.wav';
+  var puffOgg = './sounds/puff.ogg';
+  var puffURL;
+
+  var rainWav = './sounds/rain.wav';
+  var rainOgg = './sounds/rain.ogg';
+  var rainURL;
+
+  var kickWav = './sounds/kick.wav';
+  var snareWav = './sounds/snare.wav';
+  var hihatWav = './sounds/hihat.wav';
+  var kickOgg = './sounds/kick.ogg';
+  var snareOgg = './sounds/snare.ogg';
+  var hihatOgg = './sounds/hihat.ogg';
+  var kickURL;
+  var snareURL;
+  var hihatURL;
+  
   function police(browser) {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       alert('Device not supported.');
       $("body").css("background-color", "white");
       $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
-    // } else if (browser == 'Firefox') {
-    //   alert("Browser not currently supported.\nPlease use Google Chrome.");
-    //   $("body").css("background-color", "white");
-    //   $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
+    } else if (browser == 'Chrome' || browser == 'Safari'){
+      vinylURL = vinylWav;
+      puffURL = puffWav;
+      rainURL = rainWav;
+
+      kickURL = kickWav;
+      snareURL = snareWav;
+      hihatURL = hihatWav;
+
+    } else if (browser == 'Firefox') {
+      vinylURL = vinylOgg;
+      puffURL = puffOgg;
+      rainURL = rainOgg;
+
+      kickURL = kickOgg;
+      snareURL = snareOgg;
+      hihatURL = hihatOgg;
+
     } else {
-      Tone.Buffer.on('load', function() {
-        Tone.Transport.start();
-        startTerm();
-      });
+      alert("Unsupported browser/device.\nPlease use Google Chrome on Desktop.");
+      $("body").css("background-color", "white");
+      $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
     }
   }
 
@@ -61,6 +75,84 @@
     police(M[0]);
     return M[0];
   })();
+  </script>
+  <script type="text/javascript" src="js/bass.js"></script>
+  <script type="text/javascript" src="js/beat2.js"></script>
+  <script type="text/javascript" src="js/samples.js"></script>
+  <script type="text/javascript" src="js/motif.js"></script>
+  <script type="text/javascript" src="js/ascii.js"></script>
+  <script type="text/javascript" src="js/transcript.js"></script>
+  <script type="text/javascript" src="js/term.js"></script>
+  <link href="css/jquery.terminal-0.9.3.css" rel="stylesheet" />
+  <style>
+  body {
+    background-color: black;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  html { overflow: -moz-scrollbars-none; }
+  </style>
+</head>
+
+<body>
+  <div id="term"></div>
+  <script type="text/javascript">
+  // function police(browser) {
+  //   if (browser == 'Chrome' || browser == 'Safari'){
+  //     vinylURL = vinylWav;
+  //     puffURL = puffWav;
+  //     rainURL = rainWav;
+
+  //     kickURL = kickWav;
+  //     snareURL = snareWav;
+  //     hihatURL = hihatWav;
+      
+      Tone.Buffer.on('load', function() {
+        Tone.Transport.start();
+        startTerm();
+      });
+
+  //   } else if (browser == 'Firefox') {
+  //     vinylURL = vinylOgg;
+  //     puffURL = puffOgg;
+  //     rainURL = rainOgg;
+
+  //     kickURL = kickOgg;
+  //     snareURL = snareOgg;
+  //     hihatURL = hihatOgg;
+
+  //     Tone.Buffer.on('load', function() {
+  //       Tone.Transport.start();
+  //       startTerm();
+  //     });
+
+  //   } else {
+  //     alert("Unsupported browser/device.\nPlease use Google Chrome on Desktop.");
+  //     $("body").css("background-color", "white");
+  //     $("div#term").css({'fontSize':'100', 'text-align':'center'}).text("Error!");
+  //   }
+    
+  // }
+
+  // navigator.sayswho = (function() {
+  //   var ua = navigator.userAgent,
+  //     tem,
+  //     M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+  //   if (/trident/i.test(M[1])) {
+  //     tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+  //     return 'IE ' + (tem[1] || '');
+  //   }
+  //   if (M[1] === 'Chrome') {
+  //     tem = ua.match(/\b(OPR|Edge)\/(\d+)/);
+  //     if (tem != null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+  //   }
+  //   M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+  //   if ((tem = ua.match(/version\/(\d+)/i)) != null) M.splice(1, 1, tem[1]);
+  //   police(M[0]);
+  //   return M[0];
+  // })();
 
   var motif = new Motif();
   var beat = new Beat();

@@ -1,23 +1,29 @@
+// var kickWav = './sounds/kick.wav';
+// var snareWav = './sounds/snare.wav';
+// var hihatWav = './sounds/hihat.wav';
+// var kickOgg = './sounds/kick.ogg';
+// var snareOgg = './sounds/snare.ogg';
+// var hihatOgg = './sounds/hihat.ogg';
+// var kickURL;
+// var snareURL;
+// var hihatURL;
+
+
 var Beat = function(){
-
-  this.kickURL = './sounds/kick.ogg';
-  this.snareURL = './sounds/snare.ogg';
-  this.hihatURL = './sounds/hihat.ogg';
-
   this.kick = new Tone.Player({
-    "url": this.kickURL,
+    "url": kickURL,
     "retrigger": true,
     "volume": -64
   }).toMaster();
 
   this.snare = new Tone.Player({
-    "url": this.snareURL,
+    "url": snareURL,
     "retrigger": true,
     "volume": -65
   }).toMaster();
 
   this.hihat = new Tone.Player({
-    "url": this.hihatURL,
+    "url": hihatURL,
     "retrigger": true,
     "volume": -85
   }).toMaster();
